@@ -19,7 +19,8 @@
 					<li><a class="hover-btn-new log orange mr-2"
 							href="{% url 'index' %}"><span>{{user.first_name}}</span></a></li>
 					<li><a class="hover-btn-new log orange"
-							href="javascript:{document.getElementById('logout').submit()}"><span><i
+							href="javascript:{document.getElementById('logout').submit()}" data-toggle="tooltip" data-placement="bottom" title="Log out">
+							<span><i
 									class="fa fa-sign-out"></i></span></a>
 						<form action="{% url 'logout' %}" method="POST" id="logout">
 							{% csrf_token %}
@@ -28,9 +29,11 @@
 					</li>
 					{% else %}
 
-					<li><a class="hover-btn-new log orange mr-2" href="{% url 'login' %}"><span><i class="fa fa-sign-in"
+					<li><a class="hover-btn-new log orange mr-2" href="{% url 'login' %}" data-toggle="tooltip" data-placement="bottom" title="Sign in">
+						<span><i class="fa fa-sign-in"
 									aria-hidden="true"></i></span></a></li>
-					<li><a class="hover-btn-new log orange" href="{% url 'register' %}"><span><i class="fa fa-user-plus"
+					<li><a class="hover-btn-new log orange" href="{% url 'register' %}" data-toggle="tooltip" data-placement="bottom" title="Register">
+						<span><i class="fa fa-user-plus"
 									aria-hidden="true"></i></span></a></li>
 					{% endif %}
 				</ul>
